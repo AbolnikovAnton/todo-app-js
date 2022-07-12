@@ -1,16 +1,19 @@
 .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 15px auto;
     text-align: center;
-    font-style: unset;
-    font-family: Ubuntu;
+    font-weight: 400;
+    font-size: 24px;
 }
 
 ul {
     list-style-type: none;
-
 }
 
 li {
+    margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,10 +21,33 @@ li {
     cursor: pointer;
 }
 
-.delete {
-    color: #ff0000;
-}
-
 input:checked + span {
     text-decoration: line-through;
+}
+
+.closeModal {
+    opacity: 0.2;
+    cursor: pointer;
+    transition: opacity ease 0.2s;
+}
+
+.closeModal:hover {
+    opacity: 1;
+}
+
+.closeModal::before,
+.closeModal::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 3px;
+    background: #ff0000;
+}
+
+.closeModal::before {
+    transform: rotate(45deg);
+}
+
+.closeModal::after {
+    transform: rotate(-45deg);
 }
