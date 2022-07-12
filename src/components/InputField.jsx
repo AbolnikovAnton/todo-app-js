@@ -1,15 +1,23 @@
 import React from 'react';
+import {Button, TextField} from "@mui/material";
 
 const InputField = ({text, textInput, handleSubmit}) => {
     return (
-        <label>
-            <input
+        <form>
+            <TextField
+                variant="standard"
+                size="small"
+                label="Enter your ToDo"
                 value={text}
+                minLength='3'
                 onChange={e => textInput(e.target.value)}
-                placeholder='Enter your ToDo'
             />
-            <button onClick={handleSubmit}>Add ToDo</button>
-        </label>
+            <Button
+                onClick={handleSubmit}
+                variant="outlined"
+                size="large"
+            >Add ToDo</Button>
+        </form>
     );
 };
 
